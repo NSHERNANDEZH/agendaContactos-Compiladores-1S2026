@@ -12,8 +12,6 @@ public class Agenda {
 
     ArrayList<Contacto> contactos;
 
-
-
     void agregarContacto() {
         System.out.println("Ingrese nombre de contacto");
         String nombre = sn.next();
@@ -22,7 +20,7 @@ public class Agenda {
 
         Contacto nuevo = new Contacto(nombre, telefono);
 
-        if (contactos.add(nuevo)) {
+        if (contactos.add(nuevo) && validarTelefono(nuevo.getTelefono()) && validarCorreo(nuevo.getEmail())) {
             System.out.println("Contacto agregado exitosamente");
         }
         else {
@@ -37,14 +35,21 @@ public class Agenda {
             System.out.println(contacto);
         }
     }
+
     //Metodo para validar que el numero de telefono solo tenga 8 digitos
     private boolean validarTelefono(String telefono){
+        if(telefono.matches("[0-9]{8}")){
+            System.out.println("Telefono invalido");
+        }
         return telefono.matches("[0-9]{8}");
         //Tambien es funcional el: return telefono.matches("\\d{8}");
     }
 
     //Metodo para validar un correo electronico
     private boolean validarCorreo(String correo){
+        if(correo.matches("\\w+@\\w+\\.\\w+")){
+            System.out.println("Correo invalido");
+        }
         return correo.matches("\\w+@\\w+\\.\\w+");
     }
 }
