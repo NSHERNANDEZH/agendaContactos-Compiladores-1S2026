@@ -38,11 +38,15 @@ public class Agenda {
         }
     }
     //Metodo para validar que el numero de telefono solo tenga 8 digitos
-    boolean validarTelefono(String telefono){
+    private boolean validarTelefono(String telefono){
         return telefono.matches("[0-9]{8}");
         //Tambien es funcional el: return telefono.matches("\\d{8}");
     }
 
+    //Metodo para validar un correo electronico
+    private boolean validarCorreo(String correo){
+        return correo.matches("\\w+@\\w+\\.\\w+");
+    }
 }
 
 
