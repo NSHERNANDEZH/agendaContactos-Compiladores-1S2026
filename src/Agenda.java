@@ -1,7 +1,6 @@
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.Scanner;
-
+import java.util.*;
 
 public class Agenda {
     Scanner sn;
@@ -18,8 +17,8 @@ public class Agenda {
     void agregarContacto() {
         System.out.println("Ingrese nombre de contacto");
         String nombre = sn.next();
-        System.out.println("Ingrese telefono de contacto");
-        int telefono = Integer.parseInt(sn.next());
+        System.out.println("Ingrese telefono de contacto (Sin espacios ni guíon)");
+        String telefono = sn.next();
 
         Contacto nuevo = new Contacto(nombre, telefono);
 
@@ -37,6 +36,11 @@ public class Agenda {
         for (Contacto contacto : contactos) {
             System.out.println(contacto);
         }
+    }
+    //Metodo para validar que el numero de telefono solo tenga 8 digitos
+    boolean validarTelefono(String telefono){
+        return telefono.matches("[0-9]{8}");
+        //Tambien es funcional el: return telefono.matches("\\d{8}");
     }
 
 }

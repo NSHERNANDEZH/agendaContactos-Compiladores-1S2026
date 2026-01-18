@@ -1,9 +1,9 @@
 public class Contacto {
     String nombre;
-    int telefono;
+    String telefono;
     String email;
 
-    public Contacto(String nombre, int telefono) {
+    public Contacto(String nombre, String telefono) {
         this.nombre = nombre;
         this.telefono = telefono;
     }
@@ -15,10 +15,10 @@ public class Contacto {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    public int getTelefono() {
+    public String getTelefono() {
         return  telefono;
     }
-    public void setTelefono(int telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
     public String getEmail() {
